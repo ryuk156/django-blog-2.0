@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block title %}HOME{% endblock title %}
+{% block homeactive %}active{% endblock homeactive %}
+
+{% block body %}
+
+
+ 
+<div class="container my-2">
+
+     <div class="container my-2">
+       {% if user.is_authenticated %}
+     {% for booke in userdf reversed %}
+       <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <div class="container">
+        Post by <span>{{booke.user.username}}</span>
+       <p><h4 >{{booke.title}}  </h4></p>
+       <p class="lead">{{booke.content}}</p>
+       </div>
+      </div>
+      </div>
+        {% endfor %}
+        {% else %}
+
+        <h2>no user</h2>
+        {% endif %}
+
+</div>
+{% endblock body %}

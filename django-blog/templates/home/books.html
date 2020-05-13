@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block title%}Books{% endblock title%}
+{%block booksactive %}active{% endblock booksactive%}
+
+
+{% block body%}
+<div class="container my-4 ">
+<div class="jumbotron border border-1 border-muted text-white bg-dark ">
+    <p class=" container text-white "><center><h4>BOOKS</h4></center>
+        Here I will suggest you some books which are indeed read by me. 
+        Some of them will make you go high some of them will make you cry. Also here I put my own books. Dive ahead.</p>
+    <hr class="my-4" style="background:white">
+    <div class="container">
+      {% for booke in userdf %}
+          <ul>
+            <li>{{booke.user.username}}</li>
+          <li>{{booke.content}}</li>
+         
+          </ul>
+        {% endfor %}
+     </div>
+  
+  </div>
+</div>
+
+
+   
+  </div>
+</div>
+{%endblock body%}
